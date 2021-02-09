@@ -1,4 +1,4 @@
-let pinyin = require('../littleUtils/ConvertPinyin')
+let pinyin = require('./littleUtils/ConvertPinyin')
 let timerTask = (function (_this) {
   let timerArry = []
   let timerDic = {}
@@ -112,6 +112,7 @@ class JsUtil {
   drag (oDrag, handle) {
     let disX = 0
     let disY = 0
+    oDrag.style.position='absolute'
     handle = handle || oDrag
     handle.style.cursor = 'move'
     handle.onmousedown = function (e) {
@@ -169,11 +170,6 @@ class JsUtil {
   }
   toPinYin (str) {
     return pinyin.getFullChars(str)
-  }
-  companyInfo () {
-    return {
-      version: '大因分布式V2'
-    }
   }
   sortKey (array, key) {
     return array.sort(function (a, b) {
